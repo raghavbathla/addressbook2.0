@@ -60,4 +60,14 @@ public class AddressBook {
         }
 
     }
+    public  void delete(String name)
+    {
+        for (int i =0; i<arrayList.size(); i++){
+            if(arrayList.get(i).getFirstName()==name){
+                arrayList.remove(i);
+                System.out.println("Deleted Successful");
+                break;
+            }
+        }
+    }
 }
