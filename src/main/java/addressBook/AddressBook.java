@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
-    ArrayList<Contacts> arrayList = new ArrayList<Contacts>();
+    ArrayList<Contacts> arrayList = new ArrayList<>();
     Scanner scanner;
 
     public AddressBook() {
         this.scanner = new Scanner(System.in);
     }
-    public void addData(){
+    public ArrayList<Contacts> addData(){
         System.out.println("Enter all the details");
         System.out.println("First Name");
         String fname = scanner.nextLine();
@@ -31,6 +31,7 @@ public class AddressBook {
 
         arrayList.add(new Contacts(fname,lname,address,city,state,zip,phone,email));
         System.out.println("Data added Successfully");
+        return arrayList;
 
     }
     public void edit(String name){
@@ -69,5 +70,19 @@ public class AddressBook {
                 break;
             }
         }
+    }
+    public void showData(){
+        for(int i =0 ;i<arrayList.size();i++){
+            System.out.println(arrayList.get(i).getFirstName());
+            System.out.println(arrayList.get(i).getLastName());
+            System.out.println(arrayList.get(i).getAddress());
+            System.out.println(arrayList.get(i).getCity());
+            System.out.println(arrayList.get(i).getZip());
+            System.out.println(arrayList.get(i).getState());
+            System.out.println(arrayList.get(i).getPhoneNumber());
+            System.out.println(arrayList.get(i).getEmail());
+
+        }
+
     }
 }
