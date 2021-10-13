@@ -11,9 +11,13 @@ public class AddressBook {
         this.scanner = new Scanner(System.in);
     }
     public ArrayList<Contacts> addData(){
+
+
+
         System.out.println("Enter all the details");
         System.out.println("First Name");
         String fname = scanner.nextLine();
+
         System.out.println("Last Name");
         String lname = scanner.nextLine();
         System.out.println("Address");
