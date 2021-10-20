@@ -1,19 +1,23 @@
 package addressBook;
 
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AdressBooKAdd {
 
 
-    public ArrayList<Contacts> addressBook() {
+    public ArrayList<Contacts> addressBook() throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
 
 ArrayList<Contacts> arrayList = new ArrayList<>();
         boolean flag = true;
         Scanner sc = new Scanner(System.in);
         AddressBook addressBook = new AddressBook();
         while (flag) {
-            System.out.println("Enter 1 for add, 2 for edit, 3 for delete,4 for print, 5 for exit");
+            System.out.println("Enter 1 for add, 2 for edit, 3 for delete,4 for print, 5 for write with csv, 6 read with csv 0 for exit ,");
             switch (sc.nextInt()) {
                 case 1:
                 arrayList =   addressBook.addData();
@@ -32,6 +36,12 @@ ArrayList<Contacts> arrayList = new ArrayList<>();
                     addressBook.showData();
                     break;
                 case 5:
+                    addressBook.writeDataUsingCSV();
+                    break;
+                case 6:
+                    addressBook.readDataUsingCSV();
+                    break;
+                case 0:
                     flag = false;
                     break;
             }
