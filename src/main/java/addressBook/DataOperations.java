@@ -17,5 +17,11 @@ List<Contacts> resultList =contacts.stream().filter(i->i.getCity().equals(cityNa
 resultList.stream().forEach(i->System.out.println(i.getFirstName()+i.getLastName()));
 
         }
+    public void viewPersonByState(String addressBookName, String stateName){
+        List<Contacts> contacts = dictionary.get(addressBookName);
+        List<Contacts> resultList =contacts.stream().filter(i->i.getState().equals(stateName)).collect(Collectors.toList());
+        resultList.stream().forEach(i->System.out.println(i.getFirstName()+i.getLastName()));
+
+    }
 
 }
