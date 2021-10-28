@@ -15,6 +15,7 @@ public void duplicateName(String addressbookName,String name){
         Optional<Contacts> result = contacts.stream().filter(i->i.getFirstName().equals(name)).findFirst();
 
 }
+
 //    public void viewPersonByCity(){
 //System.out.println("Enter the name of Address book");
 //        String name = scanner.nextLine();
