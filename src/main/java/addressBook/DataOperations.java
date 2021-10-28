@@ -23,5 +23,16 @@ resultList.stream().forEach(i->System.out.println(i.getFirstName()+i.getLastName
         resultList.stream().forEach(i->System.out.println(i.getFirstName()+i.getLastName()));
 
     }
+    public Long countPersonByCity(String addressBookName, String cityName){
+        List<Contacts> contacts = dictionary.get(addressBookName);
+        Long resultList =contacts.stream().filter(i->i.getCity().equals(cityName)).count();
+      return   resultList;
 
+    }
+    public Long countPersonByState(String addressBookName, String stateName){
+        List<Contacts> contacts = dictionary.get(addressBookName);
+       Long resultList =contacts.stream().filter(i->i.getState().equals(stateName)).count();
+      return resultList;
+
+    }
 }
