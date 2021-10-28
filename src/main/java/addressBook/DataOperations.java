@@ -35,4 +35,13 @@ resultList.stream().forEach(i->System.out.println(i.getFirstName()+i.getLastName
       return resultList;
 
     }
+public void sortList(String addressBookName,String name){
+    List<Contacts> contacts = dictionary.get(addressBookName);
+ contacts.stream().sorted().forEach(Collections.sort(Contacts, new Comparator<Contacts>() {
+     public int compare(Student s1, Student s2) {
+         // notice the cast to (Integer) to invoke compareTo
+         return ((Integer)s1.getScore()).compareTo(s2.getScore());
+     }
+ });
+}
 }
